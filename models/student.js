@@ -1,22 +1,56 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const studentschema = new schema({
+const studentschema = new schema(
+  {
   name: {
     type: String,
     required: true,
   },
-
-  age: {
-    type: Number,
+  address: {
+    type: String,
     required: true,
   },
-
+  email: {
+    type: String,
+    required: true,
+  },
+  dateOfBirth: {
+    type: String,
+    required: true,
+  },
   gender: {
     type: String,
     required: true,
   },
-});
+  age: {
+    type: String,
+    required: true,
+  },
 
-const student = mongoose.model("Student",studentschema)
+  cardHolderName: {
+    type: String,
+    required: true,
+  },
 
-module.exports= student;
+  cardNumber: {
+    type: String,
+    required: true,
+  },
+
+  expiryDate: {
+    type: String,
+    required: true,
+  },
+  cvv: {
+    type: String,
+    required: true,
+  },
+
+
+},
+{timestamps:true}
+);
+
+const student = mongoose.model("Student", studentschema);
+
+module.exports = student;

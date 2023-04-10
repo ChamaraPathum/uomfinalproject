@@ -5,6 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
+const coustomerRouter = require("./routes/coustomerRouter")
 
 const PORT = process.env.PORT || 8070;
 
@@ -26,7 +27,7 @@ connection.once("open",()=>{
 })
 
 const studentRouter = require('./routes/students');
-app.use('/student',studentRouter);
+app.use('/coustomer',coustomerRouter);
 
 app.listen(PORT,()=>{
     console.log(`server is up and running on port number: ${PORT}`);
